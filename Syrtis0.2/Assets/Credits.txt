@@ -1,0 +1,75 @@
+Codename Syrtis
+by Divinux
+
+
+
+Programming:
+
+Divinux
+Snake
+
+3D Models and Texturing:
+
+Divinux
+
+Game Design:
+
+Divinux
+
+
+
+
+Software Used:
+
+Engine - Unity 3D Pro 4.0
+2D Graphics - Adobe Photoshop CS1
+3D Modelling - Maxon Cinema 4D r11.5
+Terrain - World Machine 2
+Sound - Ableton Live 8.0
+Textures - FilterForge 3.0
+
+
+
+
+Sound Effects:
+
+1903 Springfield .30-06 Gun Shot Blast by tm1000
+http://www.freesound.org/people/tm1000/sounds/169261/
+
+gshot 03.mp3 by SoundCollectah
+http://www.freesound.org/people/SoundCollectah/sounds/157801/
+
+gun_shoot.wav by Michel Hollicardo
+http://www.freesound.org/people/Michel%20Hollicardo/sounds/52593/
+
+Empty Gun Shot by KlawyKogut
+http://www.freesound.org/people/KlawyKogut/sounds/154934/
+
+Cardboard hit 02.wav by gusgus26
+http://www.freesound.org/people/gusgus26/sounds/121188/
+
+Eimer03.wav by Peter Lustig
+http://www.freesound.org/people/Peter%20Lustig/sounds/150090/
+
+
+Contact the author of this software via
+
+Divinux@gmx.de
+
+
+
+Unless specifically noted, all parts of this software are under
+
+           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                   Version 2, December 2004
+
+Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+ 0. You just DO WHAT THE FUCK YOU WANT TO.
