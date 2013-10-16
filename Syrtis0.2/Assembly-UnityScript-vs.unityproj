@@ -45,11 +45,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\JScripts\EnterCar.js" />
+     <Compile Include="Assets\JScripts\EnterMech.js" />
      <Compile Include="Assets\JScripts\Gun.js" />
      <Compile Include="Assets\JScripts\Lights.js" />
+     <Compile Include="Assets\JScripts\Mech.js" />
+     <Compile Include="Assets\JScripts\MechLocktrigger.js" />
+     <Compile Include="Assets\JScripts\Slidefix.js" />
      <Compile Include="Assets\JScripts\SteeringWheel.js" />
      <Compile Include="Assets\JScripts\Wipers.js" />
      <Compile Include="Assets\JScripts\lerptest.js" />
+     <Compile Include="Assets\JScripts\testscript.js" />
      <Compile Include="Assets\Raycasttest.js" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
      <None Include="Assets\Shaders\ShaderBlended.shader" />
@@ -59,6 +64,9 @@
      <None Include="Assets\Credits.txt" />
      <None Include="Assets\Shaders\SimpleGlass.shader" />
      <None Include="Assets\Shaders\Reflect-ParallaxSpecNocull.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">

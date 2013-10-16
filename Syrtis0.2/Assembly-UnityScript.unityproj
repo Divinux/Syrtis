@@ -45,11 +45,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\JScripts\EnterCar.js" />
+     <Compile Include="Assets\JScripts\EnterMech.js" />
      <Compile Include="Assets\JScripts\Gun.js" />
      <Compile Include="Assets\JScripts\Lights.js" />
+     <Compile Include="Assets\JScripts\Mech.js" />
+     <Compile Include="Assets\JScripts\MechLocktrigger.js" />
+     <Compile Include="Assets\JScripts\Slidefix.js" />
      <Compile Include="Assets\JScripts\SteeringWheel.js" />
      <Compile Include="Assets\JScripts\Wipers.js" />
      <Compile Include="Assets\JScripts\lerptest.js" />
+     <Compile Include="Assets\JScripts\testscript.js" />
      <Compile Include="Assets\Raycasttest.js" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
      <None Include="Assets\Shaders\ShaderBlended.shader" />
@@ -63,6 +68,8 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{630C3DE7-FECC-F0A8-780C-8E45C1278E14}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{0E76CDFF-AFC6-6AED-2D8D-53E79745C4A5}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

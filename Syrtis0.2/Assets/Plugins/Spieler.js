@@ -21,6 +21,8 @@ var vStrength : int;
 //value between 0 and 2, the lower the better the aim
 var vAccuracy : float;
 
+var vZoom : boolean = false;
+
 
 
 
@@ -36,6 +38,32 @@ function Update ()
 	vEnergy = energie;
 	
 	//zooms in
+	if(Input.GetButtonUp ("Fire3"))
+	{
+	print("gotcha");
+		if(vZoom == false)
+		{
+		print("zooming in");
+		var cams = gameObject.GetComponentsInChildren(Camera);
+		for (var cam : Camera in cams)
+		{
+			cam.fieldOfView = 20;
+		}
+		vZoom = true;
+		}
+		else if(vZoom == true)
+		{
+		print("zooming out");
+		var cams2 = gameObject.GetComponentsInChildren(Camera);
+		for (var cam2 : Camera in cams2)
+		{
+			cam2.fieldOfView = 60;
+		}
+		vZoom = false;
+		}
+	}
+	
+	/*This code with zoom when m3 is held down
 	if (Input.GetButtonDown ("Fire3"))
 	{
 		var cams = gameObject.GetComponentsInChildren(Camera);
@@ -52,7 +80,7 @@ function Update ()
 		{
 			cam2.fieldOfView = 60;
 		}
-	}
+	}*/
 	
 }
 

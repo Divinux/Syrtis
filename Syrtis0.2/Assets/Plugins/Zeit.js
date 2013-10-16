@@ -4,8 +4,8 @@ var stunde : int = 14;
 var tage : int = 1;
 static var monat : int = 1;
 var jahr : int = 1000;
-var zeitraffer : int = 1;
-var skywechsel : int = 0;
+var zeitraffer : float = 1.0f;
+var skywechsel : float = 0.0f;
 var sonne : Transform;
 var fadenkreuz : Texture2D;
 var hudbar : Texture2D;
@@ -30,12 +30,13 @@ function Uhr ()
 	{
 		sekunde = 0;
 		minute++;
-		Wolken();
+		
 		sonne.RotateAround(Vector3.up, Vector3.right, 0.25);
 		if (minute > 60)
 		{
 			minute = 0;
 			stunde++;
+			Wolken();
 			Verluste();
 			if (stunde > 23)
 			{
@@ -78,19 +79,29 @@ function OnGUI ()
 
 function Wolken ()
 {
-	
+	print("wolken runs");
 	if (stunde >= 6 && stunde < 20)
 	{
-		skywechsel = skywechsel - 0.1;
-		RenderSettings.skybox.SetFloat("_Blend", 0);
+		print("auf tag");
+		if(skywechsel != 0.0)
+		{
+			skywechsel = Mathf.Lerp(skywechsel, 0.0, Time.deltaTime * 2);
+			print(skywechsel);
+			RenderSettings.skybox.SetFloat("_Blend", skywechsel);
+			yield;
+		}
 	}
 	
 	if (stunde >= 20 || stunde < 6)
 	{
-		
-		skywechsel = skywechsel + 0.1;
-		RenderSettings.skybox.SetFloat("_Blend", 1);
-		
+		if(skywechsel != 1.0)
+		{
+			print("auf nacht");
+			skywechsel = Mathf.Lerp(skywechsel, 1.0, Time.deltaTime * 2);
+			print(skywechsel);
+			RenderSettings.skybox.SetFloat("_Blend", skywechsel);
+			yield;
+		}
 	}
 	
 }

@@ -54,12 +54,15 @@
      <Compile Include="Assets\Plugins\Calendar.js" />
      <Compile Include="Assets\Plugins\CharacterMotor.js" />
      <Compile Include="Assets\Plugins\Crosshair.js" />
+     <Compile Include="Assets\Plugins\Decay.js" />
      <Compile Include="Assets\Plugins\DoorCar.js" />
      <Compile Include="Assets\Plugins\DoorhandleBack.js" />
      <Compile Include="Assets\Plugins\DoorhandleLeft.js" />
      <Compile Include="Assets\Plugins\DoorhandleRight.js" />
+     <Compile Include="Assets\Plugins\DoorhandleZ.js" />
      <Compile Include="Assets\Plugins\DragRigidbody.js" />
      <Compile Include="Assets\Plugins\FPSInputController.js" />
+     <Compile Include="Assets\Plugins\Flipswitch.js" />
      <Compile Include="Assets\Plugins\Health.js" />
      <Compile Include="Assets\Plugins\InventoryBySnake.js" />
      <Compile Include="Assets\Plugins\ItemBySnake.js" />
@@ -70,6 +73,7 @@
      <Compile Include="Assets\Plugins\Lightswitch.js" />
      <Compile Include="Assets\Plugins\Lookat.js" />
      <Compile Include="Assets\Plugins\MouseOrbit.js" />
+     <Compile Include="Assets\Plugins\PianoKey.js" />
      <Compile Include="Assets\Plugins\Pool.js" />
      <Compile Include="Assets\Plugins\Projectile.js" />
      <Compile Include="Assets\Plugins\Prop.js" />
@@ -81,6 +85,7 @@
      <Compile Include="Assets\Plugins\Slide.js" />
      <Compile Include="Assets\Plugins\SmoothFollow.js" />
      <Compile Include="Assets\Plugins\SmoothLookAt.js" />
+     <Compile Include="Assets\Plugins\SoundTrigger.js" />
      <Compile Include="Assets\Plugins\Spieler.js" />
      <Compile Include="Assets\Plugins\TargetSlider.js" />
      <Compile Include="Assets\Plugins\Zeit.js" />

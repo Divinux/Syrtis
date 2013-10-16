@@ -12,6 +12,7 @@ function OnHit()
 		if(vStatus == false){
 			for(var a = 0; a < vLights.length; a++)
 			{
+			yield WaitForSeconds(1);
 			print("activating number "+a);
 				vLights[a].SetActive(true);
 				print(a+"activated"+vLights[a]);

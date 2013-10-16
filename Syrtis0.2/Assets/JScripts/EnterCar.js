@@ -79,7 +79,12 @@ function  OnHit()
 			//Unparenting Player From Vehicle
 			vPlayer.transform.position = vExitpos.transform.position;
 			vPlayer.transform.rotation = vExitpos.transform.rotation;
+			
 			vPlayer.transform.parent = null;
+			
+			vPlayer.transform.rotation.x = 0;
+			vPlayer.transform.rotation.z = 0;
+			
 			
 			//Enabling Player Movement
 			vPlayer.GetComponent(Rigidbody).isKinematic = false;
@@ -99,7 +104,7 @@ function  OnHit()
 }
 
 //this functions rotate the camera to look forward
-function LateUpdate () 
+function FixedUpdate () 
 {
 
 	if(vInside == false)
@@ -141,6 +146,20 @@ function LateUpdate ()
 			rotateY();
 			//rotateback();
 		}
+	}
+}
+
+function LateUpdate () 
+{
+if(vInside == false)
+	{
+		//quick out if the carseat is empty
+		return;
+		
+	}
+	else
+	{
+	vPlayer.transform.position = vSeatpos.transform.position;
 	}
 }
 

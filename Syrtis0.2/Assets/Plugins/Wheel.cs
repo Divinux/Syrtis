@@ -194,7 +194,7 @@ public class Wheel : MonoBehaviour {
 		float absRoadVelo = Mathf.Abs (wheelRoadVelo);
 		float damping = Mathf.Clamp01( absRoadVelo / fullSlipVelo );
 		
-		float wheelTireVelo = angularVelocity * 0.1f;
+		float wheelTireVelo = angularVelocity * radius;
 		return (wheelTireVelo - wheelRoadVelo) / absRoadVelo * damping;
 	}
 
@@ -241,7 +241,7 @@ public class Wheel : MonoBehaviour {
 			slipAngle = SlipAngle ();
 			Vector3 force = invSlipRes * grip * CombinedForce (normalForce, slipRatio, slipAngle);
 			Vector3 worldForce = transform.TransformDirection (localRotation * force);
-			angularVelocity -= (force.z * 0.1f * Time.deltaTime) / totalInertia;
+			angularVelocity -= (force.z * radius * Time.deltaTime) / totalInertia;
 			angularVelocity += driveAngularDelta;
 			if (Mathf.Abs(angularVelocity) > frictionAngularDelta)
 				angularVelocity -= frictionAngularDelta * Mathf.Sign(angularVelocity);
@@ -252,7 +252,7 @@ public class Wheel : MonoBehaviour {
 			totalForce += worldForce;
 		}
 
-		float longitunalSlipVelo = Mathf.Abs(angularVelocity * 0.1f - Vector3.Dot (wheelVelo, forward));	
+		float longitunalSlipVelo = Mathf.Abs(angularVelocity * radius - Vector3.Dot (wheelVelo, forward));	
 		float lateralSlipVelo = Vector3.Dot (wheelVelo, right);
 		slipVelo = Mathf.Sqrt(longitunalSlipVelo * longitunalSlipVelo + lateralSlipVelo * lateralSlipVelo);
 		

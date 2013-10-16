@@ -56,6 +56,7 @@
      <Compile Include="Assets\Plugins\Wheel.cs" />
      <Compile Include="Assets\Plugins\Wing.cs" />
      <Compile Include="Assets\Plugins\rigidwalker.cs" />
+     <Compile Include="Assets\Plugins\rigidwalkerw.cs" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
      <None Include="Assets\Shaders\ShaderBlended.shader" />
      <None Include="Assets\Shaders\GlassReflect 1.shader" />
