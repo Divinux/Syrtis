@@ -20,7 +20,7 @@ var vCurStatR : int = 0;
 function OnTriggerEnter (other : Collider)
 {
 
-	print("gotcha");
+
 	if(vStatus == 0)
 	{
 		vStatus = 1;
@@ -32,8 +32,7 @@ function OnTriggerEnter (other : Collider)
 		
 		lerpLo();
 		lerpRo();
-		print("lerps started");
-		
+
 	}
 	
 }
@@ -44,11 +43,10 @@ function lerpLo()
 	{
 		moveTimeL += Time.deltaTime * 1;
 		vDoorL.transform.position.x = Mathf.Lerp(vMinL.transform.position.x,vMaxL.transform.position.x,moveTimeL);
-	yield;
+		yield;
 	}
 	vCurStatL = 2;
 	waitfordoor();
-	print("lerps done");
 }
 
 function lerpRo()
@@ -69,7 +67,7 @@ function lerpLc()
 	{
 		moveTimeL += Time.deltaTime * 1;
 		vDoorL.transform.position.x = Mathf.Lerp(vMaxL.transform.position.x,vMinL.transform.position.x,moveTimeL);
-	yield;
+		yield;
 	}
 	vCurStatL = 5;
 	waitfordoor();
@@ -84,12 +82,11 @@ function lerpRc()
 		yield;
 	}
 	vCurStatR = 5;
-waitfordoor();
+	waitfordoor();
 }
 
 function wait()
 {
-	print("waiting");
 	yield WaitForSeconds(3);
 	vCurStatL = 4;
 	vCurStatR = 4;
@@ -102,7 +99,6 @@ function wait()
 
 function autoclose()
 {
-print("closing");
 	lerpLc();
 	lerpRc();
 	yield;
@@ -113,19 +109,17 @@ function waitfordoor()
 {
 	if(vCurStatL == 2 && vCurStatR == 2)
 	{
-	vCurStatL = 0;
+		vCurStatL = 0;
 		vCurStatR = 0;
-	print("opening complete");
-	wait();
+		wait();
 
 	}
 	
 	if(vCurStatL == 5 && vCurStatR == 5)
 	{
-		print("closing complete");
 		vCurStatL = 0;
 		vCurStatR = 0;
 		vStatus = 0;
 
-		}
+	}
 }

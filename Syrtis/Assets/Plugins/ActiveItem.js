@@ -11,11 +11,41 @@ var vCurrent : int = 0;
 
 function Update ()
 {
+	if(GetComponent(InventoryBySnake).isinoptions==-1 && GetComponent(InventoryBySnake).vMenuState == 0)
+{
+fListen();
+}
+	
+}
+
+function fSwitch()
+{
+
+	vActiveObj[vCurrent].SetActive(false);
+	vActiveObj[vActive].SetActive(true);
+	
+	GetComponent(InventoryBySnake).UnPauseGame();
+	
+	
+	
+	/*Destroy(vActiveObj[vActive]);
+	vActiveObj = emptyPrefab;
+	vActivePref = traeger.GetComponent(InventoryBySnake).prefabOnEquip[vActive];
+	print(vActive);
+	
+	vActiveObj = Instantiate(vActivePref,pos.position, pos.rotation);
+	vActiveObj.transform.parent = pos;
+	vActiveObj.transform.position = pos.transform.position;
+	vActiveObj.transform.rotation = pos.transform.rotation;*/
+}
+
+function fListen()
+{
+
 	if (Input.GetKeyUp("1"))
 	{
 		vCurrent = vActive;
 		vActive = 0;
-		print(vActive);
 		fSwitch();
 	}
 	
@@ -23,7 +53,6 @@ function Update ()
 	{
 		vCurrent = vActive;
 		vActive = 1;
-		print(vActive);
 		fSwitch();
 	}
 	
@@ -31,7 +60,6 @@ function Update ()
 	{
 		vCurrent = vActive;
 		vActive = 2;
-		print(vActive);
 		fSwitch();
 	}
 	
@@ -39,7 +67,6 @@ function Update ()
 	{
 		vCurrent = vActive;
 		vActive = 3;
-		print(vActive);
 		fSwitch();
 	}
 	
@@ -51,7 +78,6 @@ function Update ()
 		{
 			vActive = 3;
 		}
-		print(vActive);
 		fSwitch();
 	}
 	
@@ -63,24 +89,7 @@ function Update ()
 		{
 			vActive = 0;
 		}
-		print(vActive);
 		fSwitch();
 	}
-	
-}
 
-function fSwitch()
-{
-	vActiveObj[vCurrent].SetActive(false);
-	vActiveObj[vActive].SetActive(true);
-	
-	/*Destroy(vActiveObj[vActive]);
-	vActiveObj = emptyPrefab;
-	vActivePref = traeger.GetComponent(InventoryBySnake).prefabOnEquip[vActive];
-	print(vActive);
-	
-	vActiveObj = Instantiate(vActivePref,pos.position, pos.rotation);
-	vActiveObj.transform.parent = pos;
-	vActiveObj.transform.position = pos.transform.position;
-	vActiveObj.transform.rotation = pos.transform.rotation;*/
 }

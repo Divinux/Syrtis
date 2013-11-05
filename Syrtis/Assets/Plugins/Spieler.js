@@ -15,6 +15,10 @@ var vHealth : int;
 var vHunger : int;
 var vEnergy : int;
 
+// value of money the player carries
+var vMoney : int;
+vMoney = 1000;
+
 var vSpeed : int;
 var vStrength : int;
 
@@ -22,6 +26,8 @@ var vStrength : int;
 var vAccuracy : float;
 
 var vZoom : boolean = false;
+var vCam : GameObject;
+var vMouseSens : float;
 
 
 
@@ -37,13 +43,25 @@ function Update ()
 	vHunger = hunger;
 	vEnergy = energie;
 	
+	if(vMoney < 0)
+	{
+		vMoney = 0;
+	}
+	
 	//zooms in
 	if(Input.GetButtonUp ("Fire3"))
 	{
-	print("gotcha");
+		vMouseSens = GetComponent("MouseLook").sensitivityX;
+		
 		if(vZoom == false)
 		{
-		print("zooming in");
+		
+		GetComponent("MouseLook").sensitivityX = vMouseSens/3;
+		GetComponent("MouseLook").sensitivityY = vMouseSens/3;
+		vCam = gameObject.FindWithTag("MainCamera");
+		vCam.GetComponent("MouseLook").sensitivityX = vMouseSens/3;
+		vCam.GetComponent("MouseLook").sensitivityY = vMouseSens/3;
+		
 		var cams = gameObject.GetComponentsInChildren(Camera);
 		for (var cam : Camera in cams)
 		{
@@ -53,7 +71,13 @@ function Update ()
 		}
 		else if(vZoom == true)
 		{
-		print("zooming out");
+		
+		GetComponent("MouseLook").sensitivityX = vMouseSens*3;
+		GetComponent("MouseLook").sensitivityY = vMouseSens*3;
+		vCam = gameObject.FindWithTag("MainCamera");
+		vCam.GetComponent("MouseLook").sensitivityX = vMouseSens*3;
+		vCam.GetComponent("MouseLook").sensitivityY = vMouseSens*3;
+		
 		var cams2 = gameObject.GetComponentsInChildren(Camera);
 		for (var cam2 : Camera in cams2)
 		{
@@ -84,21 +108,25 @@ function Update ()
 	
 }
 
-/*function OnGUI ()
+function OnGUI ()
 {
-	GUI.Label(Rect(40,0,300,30), "   " + health);
-	GUI.Label(Rect(40,24,300,30), "   " + energie);
-	GUI.Label(Rect(40,48,300,30), "   " + hunger);
+	if(tod == true)
+	{
+		GUI.Label(Rect(Screen.width/2-30,Screen.height/2,250,30), "You Died! R.I.P. You :C ");
+	}
 }
-*/
+
 
 
 function Tod ()
 {
 	if (health <= 0)
 	{
-		print ("Game Over!");
+		tod = true;
 		health = 0;
+		yield WaitForSeconds(5);
+		print("Closing...");
+		Application.Quit();
 	}
 }
 

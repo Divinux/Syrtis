@@ -20,7 +20,7 @@ var vNoShotSound : AudioClip;
 
 
 
-function Awake ()
+function Start ()
 {
 	//Gameobject finds all needed Objects automatically
 	other =  GameObject.FindWithTag ("Player");
@@ -36,9 +36,13 @@ function Awake ()
 //waits for player input and triggers an action
 function Update ()
 {
+	//checks if game is paused or any menus open
 	if(Input.GetMouseButtonDown(0) && other.GetComponent(InventoryBySnake).isinoptions == -1)
 	{
-		Shoot();
+		if(other.GetComponent(InventoryBySnake).vMenuState == 0)
+		{
+			Shoot();
+		}
 	}
 	
 	
@@ -105,7 +109,7 @@ function Fire()
 	
 	print("Momentum done");
 	
-	
+	other.GetComponent(StatSkill).GainExp(3,1);
 	//print("Pew pew");
 }
 
@@ -165,15 +169,29 @@ function Reload()
 //generates a random number between -,5 and +,5 and multiplies with player accuracy
 function random ()
 {
+
 	vRnd = Random.value - 0.5;
+	if(GetComponent(ItemStats).vHealth >= 10)
+	{
+		vRnd = vRnd * 0.7;
+	}
+	if(GetComponent(ItemStats).vHealth >= 100)
+	{
+		vRnd = vRnd * 0.5;
+	}
+	var abc = 3 - other.GetComponent(StatSkill).vStats[4].vValue;
+	vRnd = vRnd* 0.1 * abc;
 	
-	vRnd = vRnd* 0.1 * other.GetComponent(Spieler).vAccuracy;
+	if(other.GetComponent(StatSkill).vStats[4].vValue == 3)
+	{
+		vRnd = 0.0001;
+	}
 }
 
 function momentum()
 {
 
-print("before wait");
+	print("before wait");
 
 	vCamObj.GetComponent(MouseLook).carplug = 6;
 	vMuzzle.SetActive(true);

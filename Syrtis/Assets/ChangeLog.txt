@@ -1,0 +1,26 @@
+v0.4
+-Added item combiner wrench
+-Added food
+-Added books
+-Added experience points and levels
+-Added city roads
+-Added mouse sensitivity slider
+-Small fixes to the GUI
+-Fixed Mouselook in pause menu
+-Fixed item stat references on pickup/drop
+
+
+v0.3
+-Added grand piano
+-Added civil mech
+-Fixed car sliding when stationary
+
+v0.2
+-Added weapons
+-Added houses
+
+v0.1
+-Added time
+-Added player
+-Added vehicles
+-Added all the other small stuff that was there in the beginning
